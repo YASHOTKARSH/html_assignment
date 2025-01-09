@@ -482,7 +482,46 @@ abhi nhi kiya
 ```
 ### 2. Create a JavaScript function that validates a form to ensure that all fields are filled in correctly. The function should check for empty fields, invalid email addresses, and invalid phone numbers. 
 ```javascript
-abhi nhi kiya
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form with Validation</title>
+  </head>
+  <body>
+    <form name="myForm" onsubmit="return validateForm()">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="fName" name="firstName"><br><br>
+      <label for="name">Last Name:</label>
+      <input type="text" id="lName" name="lastName"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone"><br><br>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      function validateForm() {
+        const fName = document.getElementById("fName").value.trim();
+        const lName = document.getElementById("lName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        if (!fName || !lName || !email || !phone) {
+          alert("All fields are required.");
+          return false;
+        }
+        if (phone.length !== 10 || isNaN(phone)) {
+          alert("Please enter a valid 10-digit phone number.");
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
+
 ```
 ### 3. Create a JavaScript function that generates a random number between 1 and 100. The function should return the random number.
 ```javascript
